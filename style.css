@@ -13,7 +13,7 @@ body {
   gap: 3px;
 }
 
-.button {
+.btn {
   display: flex;
   background-color: #f6f6f6;
   padding: 20px;
@@ -36,10 +36,15 @@ body {
   width: 450px;
 }
 .display {
-  width: 450px;
-  height: 100px;
-  background-color: white;
+  max-width: 100%;
+  padding: 10px 20px;
+  height: 80px;
   margin-bottom: 10px;
   border-radius: 5px;
   background-color: #f6f6f6;
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
