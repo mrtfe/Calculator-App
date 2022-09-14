@@ -1,3 +1,45 @@
-html {
-  background-color: salmon;
+body {
+  background-color: #aaaaaa;
+}
+
+.calculator-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.button {
+  display: flex;
+  background-color: #f6f6f6;
+  padding: 20px;
+  border: 2px var(--border) solid;
+  border-radius: 5px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+#clear {
+  grid-column: span 2;
+}
+#del {
+  grid-column: span 2;
+}
+
+.calculator-wrapper {
+  width: 450px;
+}
+.display {
+  width: 450px;
+  height: 100px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f6f6f6;
 }
