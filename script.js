@@ -66,7 +66,6 @@ function subtract(num1, num2) {
 }
 
 function multiply(num1, num2) {
-  console.log(`num1: ${num1}, num2: ${num2}, operator: ${operator}`);
   return parseInt(num1) * parseInt(num2);
 }
 
@@ -77,16 +76,12 @@ function divide(num1, num2) {
 // function that calls math function depending on operator
 function operate(operator, num1, num2) {
   if (operator == "+") {
-    console.log("add function called");
     return add(num1, num2);
   } else if (operator == "-") {
-    console.log("sub function called");
     return subtract(num1, num2);
   } else if (operator == "*") {
-    console.log("multi function called");
-    multiply(num1, num2);
+    return multiply(num1, num2);
   } else if (operator == "/") {
-    console.log("div function called");
     return divide(num1, num2);
   } else console.log("error");
 }
