@@ -7,8 +7,6 @@ const EQUAL_BTN = document.getElementById("equal");
 const CURRENT_OPERAND_DISPLAY = document.querySelector(".current-operand");
 const PREVIOUS_OPERAND_DISPLAY = document.querySelector(".previous-operand");
 
-let currentNum = null;
-let previousNum = null;
 let operator = "";
 
 //display
@@ -45,34 +43,33 @@ OPERATOR_BTN.forEach((button) => {
     operator = button.textContent;
     PREVIOUS_OPERAND_DISPLAY.innerHTML += CURRENT_OPERAND_DISPLAY.textContent;
     updateLowerDisplay();
-    console.log(operator);
   });
 });
 
 EQUAL_BTN.addEventListener("click", () => {
-  operate(
+  const result = operate(
     operator,
-    CURRENT_OPERAND_DISPLAY.textContent,
-    PREVIOUS_OPERAND_DISPLAY.textContent
+    PREVIOUS_OPERAND_DISPLAY.textContent,
+    CURRENT_OPERAND_DISPLAY.textContent
   );
-  console.log(CURRENT_OPERAND_DISPLAY.textContent);
-  console.log(PREVIOUS_OPERAND_DISPLAY.textContent);
+  PREVIOUS_OPERAND_DISPLAY.textContent = "";
+  CURRENT_OPERAND_DISPLAY.innerHTML = result;
 });
 
 function add(num1, num2) {
-  return num1 + num2;
+  return parseInt(num1) + parseInt(num2);
 }
 
 function subtract(num1, num2) {
-  return num1 - num2;
+  return parseInt(num1) - parseInt(num2);
 }
 
 function multiply(num1, num2) {
-  return num1 * num2;
+  return parseInt(num1) * parseInt(num2);
 }
 
 function divide(num1, num2) {
-  return num1 / num2;
+  return parseInt(num1) / parseInt(num2);
 }
 
 function operate(operator, num1, num2) {
@@ -89,10 +86,4 @@ function operate(operator, num1, num2) {
     console.log("div function called");
     return divide(num1, num2);
   } else console.log("error");
-}
-
-console.log(operate("+", 5, 9));
-
-function addToDisplay(element) {
-  DISPLAY.innerHTML = DISPLAY += element.value;
 }
